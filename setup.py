@@ -9,7 +9,7 @@ import multiprocessing
 import time
 from urllib.request import urlopen
 
-from setuptools import setup, find_packages
+from setuptools import setup
 from setuptools.command.build_ext import build_ext as st_build_ext
 from setuptools.command.sdist import sdist as st_sdist
 from setuptools.errors import LibError
@@ -148,23 +148,5 @@ cmdclass = {
 }
 
 setup(
-    name="pyvex",
-    version='9.1.gitrolling',
-    description="A Python interface to libVEX and VEX IR",
-    python_requires='>=3.6',
-    url='https://github.com/angr/pyvex',
-    packages=find_packages(),
     cmdclass=cmdclass,
-    install_requires=[
-        'pycparser',
-        'cffi>=1.0.3',
-        'archinfo==9.1.gitrolling',
-        'bitstring',
-        'future',
-    ],
-    setup_requires=[ 'pycparser', 'cffi>=1.0.3' ],
-    include_package_data=True,
-    package_data={
-        'pyvex': ['lib/*', 'include/*', 'py.typed']
-    }
 )

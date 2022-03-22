@@ -2,9 +2,9 @@
 PyVEX provides an interface that translates binary code into the VEX intermediate represenation (IR).
 For an introduction to VEX, take a look here: https://docs.angr.io/advanced-topics/ir
 """
-from typing import NewType, Any
+from ._version import __version__
 
-__version__ = (9, 1, "gitrolling")
+from typing import NewType, Any
 
 if bytes is str:
     raise Exception("This module is designed for python 3 only. Please install an older version to use python 2.")
